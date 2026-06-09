@@ -1,0 +1,21 @@
+# --- Data (large: ~0.6 GB + ~2.6 GB) -- download from NITRC, do NOT commit ---
+data/**
+!data/.gitkeep
+!data/README.md
+
+# --- Jupyter / Python ---
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*.pyo
+pysnirf2.log
+
+# --- Conda / venv ---
+.conda/
+env/
+venv/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini

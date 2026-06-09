@@ -1,0 +1,70 @@
+# Conda environment for the fNIRS analysis notebooks.
+#
+# Create it (once) with:
+#     conda env create -f environment.yml
+#     conda activate cedalion
+#
+# This installs cedalion and all its dependencies, plus Jupyter.
+# It mirrors cedalion's official `environment_dev.yml`; see the install video
+# in the README if anything fails. (Note: cedalion is large -- the solve and
+# download can take 10-20+ minutes.)
+name: cedalion
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - click=8.2
+  - h5py=3.14
+  - ipython=9.3
+  - joblib=1.5
+  - ipywidgets=8.1
+  - jupyter
+  - jupyter_client
+  - notebook
+  - matplotlib=3.10
+  - nibabel=5.3
+  - nilearn=0.11
+  - numpy=2.2
+  - opencv=4.11
+  - pandas=2.3
+  - pint-xarray=0.4
+  - pooch=1.8
+  - pybids=0.19
+  - pywavelets=1.8
+  - scikit-image=0.25
+  - scikit-learn=1.7
+  - scipy=1.15
+  - seaborn=0.13
+  - statsmodels=0.14
+  - strenum=0.4
+  - xarray=2025.6
+  - trimesh=4.6
+  - pyvista=0.45
+  - trame=3.10
+  - trame-vtk=2.8
+  - trame-vuetify=3.0
+  - trame-components=2.5
+  - vtk=9.4
+  - pyxdf=1.17.0
+  - hatchling
+  - hatch-vcs
+  - PyQt
+  - ipympl
+  # Use OpenBLAS rather than MKL: avoids a numpy/LAPACK DLL mismatch that can
+  # crash linear-algebra calls (SVD/lstsq) on Windows.
+  - libblas=*=*openblas
+  - liblapack=*=*openblas
+  - pip:
+      - mne==1.9
+      - mne-bids==0.16
+      - mne-nirs==0.7
+      - pywavefront==1.3
+      - setuptools-scm
+      - snirf==0.8
+      - pmcx>=0.3.3
+      - pmcxcl>=0.2.0
+      - pymeshlab
+      - snirf2bids @ git+https://github.com/emiddell/snirf2bids.git@v0.8.8
+      # cedalion itself (the fNIRS analysis framework):
+      - cedalion @ git+https://github.com/ibs-lab/cedalion.git
