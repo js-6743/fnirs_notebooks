@@ -5,7 +5,7 @@ plots, how functional near-infrared spectroscopy (fNIRS) data is analysed. They
 accompany an introductory fNIRS lecture and use the
 [**cedalion**](https://doc.ibs.tu-berlin.de/cedalion/) toolbox together with the
 open-access resting-state dataset of
-[von Lühmann et al. (2020), *Scientific Data*](https://doi.org/10.1038/s41597-020-00580-5).
+[von Lühmann et al. (2020), *Frontiers in Neuroscience*](https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2020.579353/full).
 
 The dataset includes files where a **synthetic haemodynamic response** was added
 to a known subset of channels — a *ground truth* that lets the notebooks show
@@ -116,4 +116,3 @@ as the data sits in `data/` you don't need to edit any paths.
 - **Epochs:** `cedalion.sigproc.epochs.to_epochs`
 - **GLM:** `cedalion.models.glm.{Gamma,fit}`, `design_matrix.{hrf_regressors,drift_regressors,average_short_channel_regressor}`
 - **Simulation:** `cedalion.sim.synthetic_hrf.{build_stim_df,build_synthetic_hrf_timeseries}`
-
