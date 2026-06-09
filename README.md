@@ -34,18 +34,16 @@ jupyter lab
 
 ## 1. Data
 
-The data is **not** included in this repo (~0.6 GB + ~2.6 GB). Download it from
+The data is **not** included in this repo (~0.6 GB). Download Dataset I from
 NITRC and extract it into the [`data/`](data/) folder:
 
 | Dataset | Coverage | Link | Needed? |
 |---|---|---|---|
 | **Dataset I**  | occipital | https://www.nitrc.org/frs/downloadlink.php/11885 | **required** |
-| **Dataset II** | fronto-parietal | https://www.nitrc.org/frs/downloadlink.php/11884 | optional |
 
 After extracting you should have `data/resting_state_1/Subj33/…` etc. See
-[`data/README.md`](data/README.md) for the exact expected layout. (If your
-unzipped folders are named differently, rename them to `resting_state_1` /
-`resting_state_2`.)
+[`data/README.md`](data/README.md) for the exact expected layout. If your
+unzipped folder is named differently, rename it to `resting_state_1`.
 
 ## 2. Install cedalion (the environment)
 
@@ -76,7 +74,7 @@ concepts build up.
 |---|----------|-------|
 | 1 | [`01_fnirs_signal_and_physiology.ipynb`](01_fnirs_signal_and_physiology.ipynb) | The raw fNIRS signal: montage, long vs short channels, frequency content (heartbeat / respiration / Mayer waves), simultaneously-recorded systemic signals (PPG/RESP/BP) |
 | 2 | [`02_from_light_to_hemoglobin.ipynb`](02_from_light_to_hemoglobin.ipynb) | Modified Beer–Lambert law: intensity → optical density → HbO/HbR, with signal-quality pruning, TDDR motion correction and band-pass filtering |
-| 3 | [`03_hemodynamic_response_glm.ipynb`](03_hemodynamic_response_glm.ipynb) | **Centerpiece.** Recovering a *known* synthetic response by block averaging and a GLM; short-channel regression; spatial maps; consistency across subjects |
+| 3 | [`03_hemodynamic_response_glm.ipynb`](03_hemodynamic_response_glm.ipynb) | **Centerpiece.** Recovering a *known* synthetic response by block averaging and a GLM; nuisance-regressor comparison; spatial maps; consistency across subjects |
 | 4 | [`04_synthetic_data_augmentation.ipynb`](04_synthetic_data_augmentation.ipynb) | *(bonus)* How the ground-truth files were made: generating and adding a synthetic HRF with `cedalion.sim.synthetic_hrf`, then recovering it |
 
 Headless (no GUI) execution, e.g.:
@@ -103,8 +101,8 @@ fnirs_notebooks/
 ```
 
 The notebooks locate the data automatically: they look for
-`data/resting_state_1/` first (and a couple of fallback locations), so as long
-as the data sits in `data/` you don't need to edit any paths.
+`data/resting_state_1/` and a couple of fallback locations, so as long as the
+data sits in `data/` you don't need to edit any paths.
 
 ## Key cedalion API used
 
